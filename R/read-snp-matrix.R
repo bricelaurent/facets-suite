@@ -24,7 +24,7 @@ read_snp_matrix = function(input_file,
                            err.thresh = 10,
                            del.thresh = 10) {
     
-    read_counts = data.table::fread(cmd = paste('gunzip -c', input_file), key = c('Chromosome', 'Position'))
+    read_counts = data.table::fread(input_file, key = c('Chromosome', 'Position'))
     
     if (nrow(read_counts) == 0) { # necessary since fread command doesn't throw errors for certain cases
         stop(paste(input_file, 'does not exist or cannot be read properly.'), call. = F)
