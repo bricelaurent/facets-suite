@@ -236,7 +236,7 @@ cf_plot = function(facets_data,
     my_ends = snps[ends, 'chr_maploc']
     
     cf = ggplot(segs) +
-        geom_rect(aes(xmin = my_starts, xmax = my_ends, ymax = 1, ymin = 0),
+        geom_rect(aes(xmin = my_starts$chr_maploc, xmax = my_ends$chr_maploc, ymax = 1, ymin = 0),
                   fill = cols, col = 'white', size = 0) +
         scale_x_continuous(breaks = mid, labels = names(mid), expand = c(.01, 0)) +
         scale_y_continuous(expand = c(0, 0)) +
