@@ -108,3 +108,5 @@ if (any(!maf$Tumor_Sample_Barcode %in% sample_map$sample)) {
 }
 
 write.table(output_maf, output, quote = F, sep = '\t', col.names = T, row.names = F)
+
+write(warning(), file ="/data/naxerova/brice/calculate_CCF/annotate_maf_warnings.txt")
